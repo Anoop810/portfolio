@@ -10,8 +10,8 @@ function Project() {
         <h1>Projects & Publications</h1>
         <div className="projects-grid">
             <div className="project project--draftwise">
-                <a href="https://github.com/Anoop810" target="_blank" rel="noreferrer"><img src={draftWise} className="zoom" alt="DraftWise thumbnail" width="100%"/></a>
-                <a href="https://github.com/Anoop810" target="_blank" rel="noreferrer"><h2>DraftWise</h2></a>
+                <a href="https://draft-wise-dqqa.vercel.app" target="_blank" rel="noreferrer"><img src={draftWise} className="zoom" alt="DraftWise thumbnail" width="100%"/></a>
+                <a href="https://draft-wise-dqqa.vercel.app/" target="_blank" rel="noreferrer"><h2>DraftWise</h2></a>
                 <p>AI-powered email generation platform using the Gemini API with customizable tone, style, and intent. Integrated Google OAuth 2.0 and Gmail APIs for secure authentication and direct email delivery, with a responsive React + Tailwind CSS frontend and Express.js backend.</p>
             </div>
             <div className="project project--holidays">
