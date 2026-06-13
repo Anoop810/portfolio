@@ -14,6 +14,11 @@
 .projects-container .projects-grid .project {
     text-align: left;
 }
+
+.project--eco {
+    grid-column: 2;
+    grid-row: 2;
+}
   
 .project h2:hover {
     text-decoration: underline;
@@ -44,6 +49,11 @@
       
         .projects-container .projects-grid .project {
             padding-bottom: 5%;
+        }
+
+        .project--eco {
+            grid-column: auto;
+            grid-row: auto;
         }
     }
 }

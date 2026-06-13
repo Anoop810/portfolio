@@ -1,0 +1,53 @@
+.intro-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0d1116;
+  padding: 2rem;
+}
+
+.typewriter-smooth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  max-width: 100%;
+}
+
+.typewriter-smooth__reveal {
+  overflow: hidden;
+  padding-bottom: 0.25rem;
+  max-width: 100%;
+}
+
+.typewriter-smooth__text {
+  font-size: clamp(1.1rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.typewriter-smooth__word {
+  display: inline-block;
+}
+
+.typewriter-smooth__char {
+  color: white;
+}
+
+.intro-accent {
+  color: #5000ca;
+}
+
+.typewriter-smooth__cursor {
+  display: block;
+  flex-shrink: 0;
+  width: 4px;
+  height: clamp(1.1rem, 4.5vw, 3rem);
+  background-color: #5000ca;
+  border-radius: 1px;
+}

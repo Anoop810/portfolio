@@ -113,7 +113,15 @@ p, a, h1, h2, h3, h4, h5, label, button {
   }
 
   .about-section {
-    background-image: url("./assets/images/bg-light.png");
+    background-color: #f8f9fa;
+  }
+
+  .about-section__background {
+    background-color: #f8f9fa;
+  }
+
+  .about-section__mask {
+    background-color: #f8f9fa;
   }
 
   .skills-container svg {

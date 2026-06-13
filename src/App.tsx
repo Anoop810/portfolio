@@ -9,10 +9,12 @@ import {
   Footer,
 } from "./components";
 import FadeIn from './components/FadeIn';
+import IntroLoader from './components/IntroLoader';
 import './index.scss';
 
 function App() {
     const [mode, setMode] = useState<string>('dark');
+    const [showIntro, setShowIntro] = useState<boolean>(true);
 
     const handleModeChange = () => {
         if (mode === 'dark') {
@@ -27,17 +29,20 @@ function App() {
       }, []);
 
     return (
-    <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
-        <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
-        <FadeIn transitionDuration={700}>
-            <Main/>
-            <Expertise/>
-            <Timeline/>
-            <Project/>
-            <Contact/>
-        </FadeIn>
-        <Footer />
-    </div>
+    <>
+        {showIntro && <IntroLoader onComplete={() => setShowIntro(false)} />}
+        <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
+            <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
+            <FadeIn transitionDuration={700}>
+                <Main/>
+                <Expertise/>
+                <Timeline/>
+                <Project/>
+                <Contact/>
+            </FadeIn>
+            <Footer />
+        </div>
+    </>
     );
 }
 

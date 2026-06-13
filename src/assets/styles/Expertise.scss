@@ -19,6 +19,59 @@
     align-items: center;
     text-align: left;
 }
+
+.skill-icon {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
+.skill-icon--react {
+    animation: skill-spin 8s linear infinite;
+}
+
+.skill-icon--node {
+    animation: skill-flip 3s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+.skill-icon--docker {
+    animation: skill-bob 2.5s ease-in-out infinite;
+}
+
+@keyframes skill-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes skill-flip {
+    0%, 100% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes skill-bob {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skill-icon--react,
+    .skill-icon--node,
+    .skill-icon--docker {
+        animation: none;
+    }
+}
   
 .chip {
     color: rgb(39, 40, 34) !important;

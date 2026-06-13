@@ -46,7 +46,7 @@ function Expertise() {
             <h1>Expertise</h1>
             <div className="skills-grid">
                 <div className="skill">
-                    <FontAwesomeIcon icon={faReact} size="3x"/>
+                    <FontAwesomeIcon icon={faReact} size="3x" className="skill-icon skill-icon--react"/>
                     <h3>Frontend Development</h3>
                     <p>I build responsive, user-focused web interfaces with React.js, TypeScript, and Tailwind CSS — from product dashboards and CRMs to AI-powered platforms with modular, maintainable component architecture.</p>
                     <div className="flex-chips">
@@ -58,7 +58,7 @@ function Expertise() {
                 </div>
 
                 <div className="skill">
-                    <FontAwesomeIcon icon={faNodeJs} size="3x"/>
+                    <FontAwesomeIcon icon={faNodeJs} size="3x" className="skill-icon skill-icon--node"/>
                     <h3>Backend & Databases</h3>
                     <p>I design and ship full-stack applications with Node.js and Express, modeling database schemas, building RESTful APIs, and implementing authentication workflows that scale from freelance client projects to production systems.</p>
                     <div className="flex-chips">
@@ -70,7 +70,7 @@ function Expertise() {
                 </div>
 
                 <div className="skill">
-                    <FontAwesomeIcon icon={faDocker} size="3x"/>
+                    <FontAwesomeIcon icon={faDocker} size="3x" className="skill-icon skill-icon--docker"/>
                     <h3>Cloud, DevOps & AI</h3>
                     <p>I integrate cloud infrastructure, CI/CD pipelines, and AI APIs into real products — from AWS deployments and Dockerized services to Gemini-powered features and data-driven analytics dashboards.</p>
                     <div className="flex-chips">

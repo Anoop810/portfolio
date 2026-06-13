@@ -10,9 +10,9 @@ function Footer() {
       <div>
         <a href="https://github.com/Anoop810" target="_blank" rel="noreferrer"><GitHubIcon/></a>
         <a href="https://www.linkedin.com/in/anoopsonawane" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
-        <a href="mailto:anoopsonawane810@gmail.com" rel="noreferrer"><EmailIcon/></a>
+        <a href="#contact" rel="noreferrer"><EmailIcon/></a>
       </div>
-      <p>Portfolio of Anoop Sonawane · Built with <a href="https://github.com/yujisatojr/react-portfolio-template" target="_blank" rel="noreferrer">react-portfolio-template</a></p>
+      <p>Anoop Sonawane </p>
     </footer>
   );
 }

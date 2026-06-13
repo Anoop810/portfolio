@@ -1,0 +1,62 @@
+.background-boxes-grid {
+  position: absolute;
+  top: -25%;
+  left: 25%;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  height: 200%;
+  width: 200%;
+  padding: 1rem;
+  transform: translate(-40%, -60%) skewX(-48deg) skewY(14deg) scale(0.675)
+    rotate(0deg) translateZ(0);
+  pointer-events: auto;
+}
+
+.background-boxes-row {
+  display: flex;
+  position: relative;
+  height: 32px;
+  border-left: 1px solid rgba(51, 65, 85, 0.8);
+}
+
+.background-boxes-cell {
+  position: relative;
+  height: 32px;
+  width: 64px;
+  border-right: 1px solid rgba(51, 65, 85, 0.8);
+  border-top: 1px solid rgba(51, 65, 85, 0.8);
+  flex-shrink: 0;
+}
+
+.background-boxes-plus {
+  pointer-events: none;
+  position: absolute;
+  left: -22px;
+  top: -14px;
+  height: 24px;
+  width: 40px;
+  stroke-width: 1px;
+  color: rgba(51, 65, 85, 0.9);
+}
+
+.light-mode {
+  .background-boxes-row {
+    border-left-color: rgba(148, 163, 184, 0.6);
+  }
+
+  .background-boxes-cell {
+    border-right-color: rgba(148, 163, 184, 0.6);
+    border-top-color: rgba(148, 163, 184, 0.6);
+  }
+
+  .background-boxes-plus {
+    color: rgba(148, 163, 184, 0.8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .background-boxes-cell {
+    transition: none !important;
+  }
+}
