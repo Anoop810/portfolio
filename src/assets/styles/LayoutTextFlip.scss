@@ -52,7 +52,20 @@
 @media screen {
   @media (max-width: 768px) {
     .layout-text-flip {
-      font-size: 1.35em;
+      font-size: clamp(0.95rem, 4vw, 1.25rem);
+      justify-content: center;
+      max-width: 100%;
+    }
+
+    .layout-text-flip__box {
+      min-height: 2rem;
+      padding: 0.15rem 0.65rem;
+      max-width: calc(100vw - 2.5rem);
+    }
+
+    .layout-text-flip__word {
+      white-space: normal;
+      text-align: center;
     }
   }
 }

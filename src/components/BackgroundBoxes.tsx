@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import '../assets/styles/BackgroundBoxes.scss';
 
@@ -13,15 +13,36 @@ const COLORS = [
   '#d8b4fe',
 ];
 
-const ROWS = 45;
-const COLS = 65;
-
 const getRandomColor = () =>
   COLORS[Math.floor(Math.random() * COLORS.length)];
 
+function useGridSize() {
+  const [grid, setGrid] = useState({ rows: 45, cols: 65 });
+
+  useEffect(() => {
+    const update = () => {
+      const width = window.innerWidth;
+      if (width <= 480) {
+        setGrid({ rows: 18, cols: 24 });
+      } else if (width <= 768) {
+        setGrid({ rows: 24, cols: 32 });
+      } else {
+        setGrid({ rows: 45, cols: 65 });
+      }
+    };
+
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  return grid;
+}
+
 function BoxesCore({ className = '' }: { className?: string }) {
-  const rows = Array.from({ length: ROWS });
-  const cols = Array.from({ length: COLS });
+  const { rows: rowCount, cols: colCount } = useGridSize();
+  const rows = Array.from({ length: rowCount });
+  const cols = Array.from({ length: colCount });
 
   return (
     <div className={`background-boxes-grid ${className}`.trim()}>

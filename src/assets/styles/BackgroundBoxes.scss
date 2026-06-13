@@ -60,3 +60,34 @@
     transition: none !important;
   }
 }
+
+@media screen {
+  @media (max-width: 768px) {
+    .background-boxes-grid {
+      top: -15%;
+      left: 10%;
+      height: 160%;
+      width: 160%;
+      transform: translate(-35%, -55%) skewX(-48deg) skewY(14deg) scale(0.55)
+        rotate(0deg) translateZ(0);
+      pointer-events: none;
+      opacity: 0.55;
+    }
+
+    .background-boxes-row {
+      height: 24px;
+    }
+
+    .background-boxes-cell {
+      height: 24px;
+      width: 48px;
+    }
+
+    .background-boxes-plus {
+      height: 18px;
+      width: 32px;
+      left: -16px;
+      top: -10px;
+    }
+  }
+}
