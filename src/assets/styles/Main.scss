@@ -132,6 +132,14 @@
         }
     }
 
+    @media (min-width: 769px) {
+        .about-section {
+            min-height: auto;
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+        }
+    }
+
     @media (max-width: 768px) {
         .about-section {
             min-height: auto;
