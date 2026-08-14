@@ -114,6 +114,16 @@
 }
 
 @media screen {
+    @media (min-width: 769px) {
+        #expertise.container {
+            margin-top: 0;
+        }
+
+        .skills-container {
+            padding-top: 1.5rem;
+        }
+    }
+
     @media (max-width: 768px) {
         .skills-container {
             display: block;
