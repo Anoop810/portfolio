@@ -2,7 +2,7 @@ import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faNodeJs, faDocker } from '@fortawesome/free-brands-svg-icons';
-import { faRobot } from '@fortawesome/free-solid-svg-icons';
+import { faBrain } from '@fortawesome/free-solid-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
@@ -81,7 +81,7 @@ function Expertise() {
                 </div>
 
                 <div className="skill">
-                    <FontAwesomeIcon icon={faRobot} size="3x" className="skill-icon skill-icon--ai"/>
+                    <FontAwesomeIcon icon={faBrain} size="3x" className="skill-icon skill-icon--ai"/>
                     <h3>AI Systems — RAG, LLMs & Agents</h3>
                     <p>I design retrieval-augmented generation pipelines, LLM integrations, and multi-step agent orchestration — grounding model outputs in real data, coordinating tools and workflows, and shipping reliable AI features into production products.</p>
                     <div className="flex-chips">

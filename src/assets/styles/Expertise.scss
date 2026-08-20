@@ -68,7 +68,7 @@
 }
 
 .skill-icon--ai {
-    animation: skill-pulse 2.8s ease-in-out infinite;
+    animation: skill-ai-glow 3.2s ease-in-out infinite;
 }
 
 @keyframes skill-spin {
@@ -98,14 +98,14 @@
     }
 }
 
-@keyframes skill-pulse {
+@keyframes skill-ai-glow {
     0%, 100% {
-        transform: scale(1);
+        filter: drop-shadow(0 0 0 transparent);
         opacity: 1;
     }
     50% {
-        transform: scale(1.06);
-        opacity: 0.85;
+        filter: drop-shadow(0 0 10px rgba(124, 92, 255, 0.55));
+        opacity: 0.92;
     }
 }
 
