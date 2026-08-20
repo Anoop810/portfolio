@@ -17,7 +17,7 @@ function Timeline() {
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
             date="Dec 2025 – Present"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#5b3df5', color: '#fff' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Engineering Intern</h3>
@@ -29,7 +29,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="May 2025 – Nov 2025"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#5b3df5', color: '#fff' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Full Stack Freelance Developer</h3>
@@ -41,7 +41,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="Apr 2024 – Oct 2024"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#5b3df5', color: '#fff' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Technical Intern</h3>
@@ -53,7 +53,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--education"
             date="Sep 2024 – Jun 2026"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#5b3df5', color: '#fff' }}
             icon={<FontAwesomeIcon icon={faGraduationCap} />}
           >
             <h3 className="vertical-timeline-element-title">Master of Computer Applications</h3>
@@ -63,7 +63,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--education"
             date="Jun 2021 – Mar 2024"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#5b3df5', color: '#fff' }}
             icon={<FontAwesomeIcon icon={faGraduationCap} />}
           >
             <h3 className="vertical-timeline-element-title">Bachelor of Science in Information Technology</h3>

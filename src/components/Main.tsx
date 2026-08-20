@@ -29,9 +29,9 @@ function Main() {
           <LayoutTextFlip
             className="hero-role"
             words={[
-              'Developer',
-              'Designer',
-              'Coder',
+              'Full-Stack Developer',
+              'AI Engineer',
+              'Agent Builder',
             ]}
             duration={1800}
           />
