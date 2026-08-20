@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #0d1116;
+  background-color: #070a0f;
   padding: 2rem;
 }
 
@@ -36,11 +36,11 @@
 }
 
 .typewriter-smooth__char {
-  color: white;
+  color: #f3f5f7;
 }
 
 .intro-accent {
-  color: #5000ca;
+  color: #7c5cff;
 }
 
 .typewriter-smooth__cursor {
@@ -48,6 +48,6 @@
   flex-shrink: 0;
   width: 4px;
   height: clamp(1.1rem, 4.5vw, 3rem);
-  background-color: #5000ca;
+  background-color: #7c5cff;
   border-radius: 1px;
 }
