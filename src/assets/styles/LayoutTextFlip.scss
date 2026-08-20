@@ -8,7 +8,7 @@
 }
 
 .layout-text-flip__static {
-  color: white;
+  color: var(--text);
   font-family: 'Lato', sans-serif;
 }
 
@@ -19,28 +19,17 @@
   min-height: 2.25rem;
   padding: 0.2rem 0.85rem;
   border-radius: 10px;
-  border: 1px solid rgba(80, 0, 202, 0.45);
-  background: rgba(80, 0, 202, 0.15);
+  border: 1px solid var(--chip-border);
+  background: var(--accent-soft);
   overflow: hidden;
 }
 
 .layout-text-flip__word {
   display: inline-block;
-  color: white;
+  color: var(--text);
   font-family: 'Lato', sans-serif;
   white-space: nowrap;
-}
-
-.light-mode {
-  .layout-text-flip__static,
-  .layout-text-flip__word {
-    color: #0d1116;
-  }
-
-  .layout-text-flip__box {
-    border-color: rgba(80, 0, 202, 0.35);
-    background: rgba(80, 0, 202, 0.08);
-  }
+  font-weight: 600;
 }
 
 @media (prefers-reduced-motion: reduce) {

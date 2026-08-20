@@ -1,5 +1,5 @@
 .dark-mode .about-section {
-    background-color: #0d1116;
+    background-color: transparent;
 }
 
 .about-section {
@@ -12,7 +12,7 @@
     padding: 0 15%;
     min-height: 700px;
     overflow: hidden;
-    background-color: #0d1116;
+    background-color: transparent;
     box-sizing: border-box;
 }
 
@@ -20,7 +20,7 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-color: #0d1116;
+    background-color: var(--bg);
     overflow: hidden;
 }
 
@@ -28,7 +28,7 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background-color: #0d1116;
+    background-color: var(--bg);
     mask-image: radial-gradient(transparent, white);
     -webkit-mask-image: radial-gradient(transparent, white);
     pointer-events: none;
@@ -42,10 +42,14 @@
         display: flex;
         flex-direction: row;
         gap: 10px;
-        color: white;
+        color: var(--text);
 
         svg {
             font-size: 1.8em;
+        }
+
+        a:hover {
+            color: var(--accent);
         }
     }
 
@@ -83,6 +87,8 @@
         border-radius: 50%;
         object-fit: cover;
         display: block;
+        border: 2px solid var(--border-strong);
+        box-shadow: 0 0 0 6px var(--accent-soft);
     }
 }
 
@@ -180,7 +186,7 @@
             flex-direction: row;
             justify-content: center;
             gap: 12px;
-            color: white;
+            color: var(--text);
 
             svg {
                 font-size: 1.6em;

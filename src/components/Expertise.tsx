@@ -2,6 +2,7 @@ import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faNodeJs, faDocker } from '@fortawesome/free-brands-svg-icons';
+import { faRobot } from '@fortawesome/free-solid-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
@@ -29,14 +30,24 @@ const labelsSecond = [
 ];
 
 const labelsThird = [
+    "LLMs",
+    "RAG",
+    "Agent Orchestration",
+    "Prompt Engineering",
+    "Gemini API",
+    "OpenAI API",
+    "Vector Databases",
+    "Embeddings",
+    "Python",
+];
+
+const labelsFourth = [
     "AWS",
     "Docker",
     "Git",
     "Jenkins",
     "CI/CD",
     "Linux",
-    "Gemini API",
-    "Python",
 ];
 
 function Expertise() {
@@ -70,12 +81,24 @@ function Expertise() {
                 </div>
 
                 <div className="skill">
-                    <FontAwesomeIcon icon={faDocker} size="3x" className="skill-icon skill-icon--docker"/>
-                    <h3>Cloud, DevOps & AI</h3>
-                    <p>I integrate cloud infrastructure, CI/CD pipelines, and AI APIs into real products — from AWS deployments and Dockerized services to Gemini-powered features and data-driven analytics dashboards.</p>
+                    <FontAwesomeIcon icon={faRobot} size="3x" className="skill-icon skill-icon--ai"/>
+                    <h3>AI Systems — RAG, LLMs & Agents</h3>
+                    <p>I design retrieval-augmented generation pipelines, LLM integrations, and multi-step agent orchestration — grounding model outputs in real data, coordinating tools and workflows, and shipping reliable AI features into production products.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsThird.map((label, index) => (
+                            <Chip key={index} className='chip' label={label} />
+                        ))}
+                    </div>
+                </div>
+
+                <div className="skill">
+                    <FontAwesomeIcon icon={faDocker} size="3x" className="skill-icon skill-icon--docker"/>
+                    <h3>Cloud & DevOps</h3>
+                    <p>I integrate cloud infrastructure and CI/CD into real products — from AWS deployments and Dockerized services to automated pipelines that keep releases fast, repeatable, and production-ready.</p>
+                    <div className="flex-chips">
+                        <span className="chip-title">Tech stack:</span>
+                        {labelsFourth.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}
                     </div>

@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 import '../assets/styles/BackgroundBoxes.scss';
 
 const COLORS = [
-  '#5000ca',
-  '#7c3aed',
-  '#a78bfa',
-  '#c4b5fd',
-  '#93c5fd',
-  '#f9a8d4',
-  '#86efac',
-  '#d8b4fe',
+  '#5b3df5',
+  '#7c5cff',
+  '#4f46e5',
+  '#6366f1',
+  '#0e7490',
+  '#334155',
+  '#64748b',
+  '#8b5cf6',
 ];
 
 const getRandomColor = () =>
