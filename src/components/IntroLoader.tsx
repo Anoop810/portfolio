@@ -10,7 +10,7 @@ interface IntroLoaderProps {
 const introWords = [
   { text: "Developer", className: "intro-accent" },
   { text: "By" },
-  { text: "heart," },
+  { text: "heart,", breakAfter: true },
   { text: "Builder", className: "intro-accent" },
   { text: "By" },
   { text: "passion", className: "intro-accent" },

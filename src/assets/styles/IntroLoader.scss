@@ -6,7 +6,9 @@
   align-items: center;
   justify-content: center;
   background-color: #070a0f;
-  padding: 2rem;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .typewriter-smooth {
@@ -15,20 +17,25 @@
   justify-content: center;
   gap: 0.25rem;
   max-width: 100%;
+  min-width: 0;
 }
 
 .typewriter-smooth__reveal {
-  overflow: hidden;
-  padding-bottom: 0.25rem;
   max-width: 100%;
+  min-width: 0;
+  padding-bottom: 0.25rem;
 }
 
 .typewriter-smooth__text {
   font-size: clamp(1.1rem, 4.5vw, 3.5rem);
   font-weight: 700;
   font-family: "Lato", sans-serif;
+  line-height: 1.25;
   white-space: nowrap;
-  line-height: 1.2;
+}
+
+.typewriter-smooth__line {
+  display: inline;
 }
 
 .typewriter-smooth__word {
@@ -50,4 +57,31 @@
   height: clamp(1.1rem, 4.5vw, 3rem);
   background-color: #7c5cff;
   border-radius: 1px;
+}
+
+@media (max-width: 640px) {
+  .intro-loader {
+    padding: 1rem;
+  }
+
+  .typewriter-smooth__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: normal;
+    text-align: center;
+    /* Sized so each phrase fits on one line down to ~320px */
+    font-size: clamp(1rem, 4.8vw, 1.65rem);
+  }
+
+  .typewriter-smooth__line {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .typewriter-smooth__cursor {
+    align-self: stretch;
+    height: auto;
+    min-height: 1rem;
+  }
 }

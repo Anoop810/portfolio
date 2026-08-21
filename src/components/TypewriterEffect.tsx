@@ -5,6 +5,8 @@ import "../assets/styles/IntroLoader.scss";
 interface Word {
   text: string;
   className?: string;
+  /** Start a new visual line after this word on small screens */
+  breakAfter?: boolean;
 }
 
 interface TypewriterEffectSmoothProps {
@@ -20,35 +22,40 @@ function TypewriterEffectSmooth({
   cursorClassName = "",
   onComplete,
 }: TypewriterEffectSmoothProps) {
-  const wordsArray = words.map((word) => ({
-    ...word,
-    text: word.text.split(""),
-  }));
+  const lines: Word[][] = [[]];
+  words.forEach((word) => {
+    lines[lines.length - 1].push(word);
+    if (word.breakAfter) {
+      lines.push([]);
+    }
+  });
+  const wordLines = lines.filter((line) => line.length > 0);
 
-  const renderWords = () => (
-    <div>
-      {wordsArray.map((word, idx) => (
-        <div key={`word-${idx}`} className="typewriter-smooth__word">
-          {word.text.map((char, index) => (
-            <span
-              key={`char-${index}`}
-              className={`typewriter-smooth__char ${word.className || ""}`.trim()}
-            >
-              {char}
-            </span>
-          ))}
-          &nbsp;
-        </div>
-      ))}
-    </div>
-  );
+  const renderWords = () =>
+    wordLines.map((line, lineIdx) => (
+      <div key={`line-${lineIdx}`} className="typewriter-smooth__line">
+        {line.map((word, idx) => (
+          <div key={`word-${lineIdx}-${idx}`} className="typewriter-smooth__word">
+            {word.text.split("").map((char, index) => (
+              <span
+                key={`char-${index}`}
+                className={`typewriter-smooth__char ${word.className || ""}`.trim()}
+              >
+                {char}
+              </span>
+            ))}
+            &nbsp;
+          </div>
+        ))}
+      </div>
+    ));
 
   return (
     <div className={`typewriter-smooth ${className}`.trim()}>
       <motion.div
         className="typewriter-smooth__reveal"
-        initial={{ width: "0%" }}
-        animate={{ width: "fit-content" }}
+        initial={{ clipPath: "inset(0 100% 0 0)" }}
+        animate={{ clipPath: "inset(0 0% 0 0)" }}
         transition={{
           duration: 2,
           ease: "linear",
@@ -56,9 +63,7 @@ function TypewriterEffectSmooth({
         }}
         onAnimationComplete={onComplete}
       >
-        <div className="typewriter-smooth__text">
-          {renderWords()}{" "}
-        </div>
+        <div className="typewriter-smooth__text">{renderWords()}</div>
       </motion.div>
       <motion.span
         className={`typewriter-smooth__cursor ${cursorClassName}`.trim()}
