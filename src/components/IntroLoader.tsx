@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import TypewriterEffectSmooth from "./TypewriterEffect";
 import "../assets/styles/IntroLoader.scss";
@@ -16,8 +16,13 @@ const introWords = [
   { text: "passion", className: "intro-accent" },
 ];
 
+/** Hard cap so a stalled animation never traps the visitor on the splash */
+const INTRO_FAILSAFE_MS = 6000;
+const EXIT_HOLD_MS = 900;
+
 function IntroLoader({ onComplete }: IntroLoaderProps) {
   const [visible, setVisible] = useState(true);
+  const finishingRef = useRef(false);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -26,9 +31,18 @@ function IntroLoader({ onComplete }: IntroLoaderProps) {
     };
   }, []);
 
-  const handleTypewriterComplete = () => {
-    window.setTimeout(() => setVisible(false), 1000);
-  };
+  const beginExit = useCallback(() => {
+    if (finishingRef.current) {
+      return;
+    }
+    finishingRef.current = true;
+    window.setTimeout(() => setVisible(false), EXIT_HOLD_MS);
+  }, []);
+
+  useEffect(() => {
+    const failsafe = window.setTimeout(beginExit, INTRO_FAILSAFE_MS);
+    return () => window.clearTimeout(failsafe);
+  }, [beginExit]);
 
   return (
     <AnimatePresence onExitComplete={onComplete}>
@@ -37,11 +51,11 @@ function IntroLoader({ onComplete }: IntroLoaderProps) {
           className="intro-loader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
+          transition={{ duration: 0.55, ease: "easeInOut" }}
         >
           <TypewriterEffectSmooth
             words={introWords}
-            onComplete={handleTypewriterComplete}
+            onComplete={beginExit}
           />
         </motion.div>
       )}

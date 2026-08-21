@@ -15,35 +15,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
   max-width: 100%;
   min-width: 0;
-}
-
-.typewriter-smooth__reveal {
-  max-width: 100%;
-  min-width: 0;
-  padding-bottom: 0.25rem;
 }
 
 .typewriter-smooth__text {
   font-size: clamp(1.1rem, 4.5vw, 3.5rem);
   font-weight: 700;
   font-family: "Lato", sans-serif;
-  line-height: 1.25;
+  line-height: 1.35;
   white-space: nowrap;
+  text-align: center;
 }
 
 .typewriter-smooth__line {
   display: inline;
 }
 
-.typewriter-smooth__word {
-  display: inline-block;
-}
-
 .typewriter-smooth__char {
   color: #f3f5f7;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.typewriter-smooth__char.is-revealed {
+  opacity: 1;
+  visibility: visible;
 }
 
 .intro-accent {
@@ -51,12 +48,25 @@
 }
 
 .typewriter-smooth__cursor {
-  display: block;
-  flex-shrink: 0;
-  width: 4px;
-  height: clamp(1.1rem, 4.5vw, 3rem);
+  display: inline-block;
+  width: 0.12em;
+  height: 0.95em;
+  margin-left: 0.08em;
+  vertical-align: -0.08em;
   background-color: #7c5cff;
   border-radius: 1px;
+  animation: intro-cursor-blink 0.85s steps(1, end) infinite;
+}
+
+@keyframes intro-cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 640px) {
@@ -68,8 +78,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.15em;
     white-space: normal;
-    text-align: center;
     /* Sized so each phrase fits on one line down to ~320px */
     font-size: clamp(1rem, 4.8vw, 1.65rem);
   }
@@ -78,10 +88,16 @@
     display: block;
     white-space: nowrap;
   }
+}
 
+@media (prefers-reduced-motion: reduce) {
   .typewriter-smooth__cursor {
-    align-self: stretch;
-    height: auto;
-    min-height: 1rem;
+    animation: none;
+    opacity: 1;
+  }
+
+  .typewriter-smooth__char {
+    opacity: 1;
+    visibility: visible;
   }
 }
