@@ -5,6 +5,8 @@ import "../assets/styles/IntroLoader.scss";
 interface Word {
   text: string;
   className?: string;
+  /** Insert a line break after this word on small screens */
+  breakAfter?: boolean;
 }
 
 interface TypewriterEffectSmoothProps {
@@ -26,19 +28,24 @@ function TypewriterEffectSmooth({
   }));
 
   const renderWords = () => (
-    <div>
+    <div className="typewriter-smooth__words">
       {wordsArray.map((word, idx) => (
-        <div key={`word-${idx}`} className="typewriter-smooth__word">
-          {word.text.map((char, index) => (
-            <span
-              key={`char-${index}`}
-              className={`typewriter-smooth__char ${word.className || ""}`.trim()}
-            >
-              {char}
-            </span>
-          ))}
-          &nbsp;
-        </div>
+        <React.Fragment key={`word-${idx}`}>
+          <div className="typewriter-smooth__word">
+            {word.text.map((char, index) => (
+              <span
+                key={`char-${index}`}
+                className={`typewriter-smooth__char ${word.className || ""}`.trim()}
+              >
+                {char}
+              </span>
+            ))}
+            &nbsp;
+          </div>
+          {word.breakAfter ? (
+            <br className="typewriter-smooth__break" aria-hidden="true" />
+          ) : null}
+        </React.Fragment>
       ))}
     </div>
   );
