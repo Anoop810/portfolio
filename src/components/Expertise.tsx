@@ -1,9 +1,10 @@
 import React from "react";
-import '@fortawesome/free-regular-svg-icons'
+import '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faNodeJs, faDocker } from '@fortawesome/free-brands-svg-icons';
 import { faBrain } from '@fortawesome/free-solid-svg-icons';
 import Chip from '@mui/material/Chip';
+import { ScrollReveal, ScrollRevealGroup, SectionIntro } from './ScrollReveal';
 import '../assets/styles/Expertise.scss';
 
 const labelsFirst = [
@@ -54,8 +55,15 @@ function Expertise() {
     return (
     <div className="container" id="expertise">
         <div className="skills-container">
-            <h1>Expertise</h1>
-            <div className="skills-grid">
+            <ScrollReveal>
+                <SectionIntro
+                    index="01"
+                    eyebrow="Expertise"
+                    title="I build on the web."
+                    lead="Full stack product work, AI systems, and the infrastructure to ship them with confidence."
+                />
+            </ScrollReveal>
+            <ScrollRevealGroup className="skills-grid">
                 <div className="skill">
                     <FontAwesomeIcon icon={faReact} size="3x" className="skill-icon skill-icon--react"/>
                     <h3>Frontend Development</h3>
@@ -103,7 +111,7 @@ function Expertise() {
                         ))}
                     </div>
                 </div>
-            </div>
+            </ScrollRevealGroup>
         </div>
     </div>
     );

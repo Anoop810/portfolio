@@ -8,7 +8,6 @@ import {
   Navigation,
   Footer,
 } from "./components";
-import FadeIn from './components/FadeIn';
 import IntroLoader from './components/IntroLoader';
 import './index.scss';
 
@@ -33,13 +32,11 @@ function App() {
         {showIntro && <IntroLoader onComplete={() => setShowIntro(false)} />}
         <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
             <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
-            <FadeIn transitionDuration={700}>
-                <Main/>
-                <Expertise/>
-                <Timeline/>
-                <Project/>
-                <Contact/>
-            </FadeIn>
+            <Main/>
+            <Expertise/>
+            <Timeline/>
+            <Project/>
+            <Contact/>
             <Footer />
         </div>
     </>

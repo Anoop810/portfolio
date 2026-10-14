@@ -16,6 +16,7 @@
 }
   
 .projects-container .projects-grid .project {
+    position: relative;
     text-align: left;
     padding: 1.25rem;
     border-radius: 14px;
@@ -36,6 +37,16 @@
 .project--eco {
     grid-column: 2;
     grid-row: 2;
+}
+
+.project__index {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
 }
   
 .project h2:hover {

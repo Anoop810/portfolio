@@ -10,6 +10,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import TextField from '@mui/material/TextField';
 import '../assets/styles/Contact.scss';
+import '../assets/styles/ScrollReveal.scss';
 
 const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || '';
 const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || '';
@@ -144,12 +145,15 @@ function Contact() {
           animate={isInView ? 'visible' : 'hidden'}
           variants={containerVariants}
         >
-          <motion.div className="contact_header" variants={itemVariants}>
-            <span className="contact_eyebrow">Get in touch</span>
-            <h1>Contact Me</h1>
-            <p>
-              Got a project waiting to be realized? Let&apos;s collaborate and
-              make it happen.
+          <motion.div className="contact_header section-intro" variants={itemVariants}>
+            <p className="section-intro__meta">
+              <span className="section-intro__index">04</span>
+              <span className="section-intro__divider">/</span>
+              <span className="section-intro__eyebrow">Contact</span>
+            </p>
+            <h1 className="section-intro__title">Let&apos;s connect.</h1>
+            <p className="section-intro__lead">
+              Got a project waiting to be realized? Let&apos;s collaborate and make it happen.
             </p>
           </motion.div>
 
