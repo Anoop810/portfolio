@@ -1,38 +1,182 @@
+:root {
+  --timeline-line: rgba(124, 92, 255, 0.35);
+  --timeline-card-bg: #0f141c;
+}
+
+.light-mode {
+  --timeline-line: rgba(91, 61, 245, 0.22);
+  --timeline-card-bg: #ffffff;
+}
+
+.timeline-section {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.timeline-section__header {
+  max-width: 42rem;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-section__eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent) !important;
+}
+
+.timeline-section__lead {
+  margin: 0.75rem 0 0;
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+.timeline-entry {
+  .vertical-timeline-element-content {
+    border-radius: 14px !important;
+    padding: 1.35rem 1.5rem !important;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  &:hover .vertical-timeline-element-content {
+    border-color: var(--border-strong) !important;
+    transform: translateY(-2px);
+  }
+}
+
+.timeline-entry--current .vertical-timeline-element-content {
+  border-color: var(--border-strong) !important;
+}
+
+.timeline-badge {
+  display: inline-block;
+  margin-bottom: 0.65rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--chip-text);
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  border-radius: 999px;
+}
+
+.timeline-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.85rem 0 1rem;
+}
+
+.timeline-metric {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  color: var(--chip-text);
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+}
+
+.timeline-highlights {
+  margin: 0;
+  padding-left: 1.15rem;
+  list-style: disc;
+
+  li {
+    margin-bottom: 0.55rem;
+    line-height: 1.6;
+    color: var(--text-muted) !important;
+    font-size: 0.98rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.timeline-conclusion {
+  margin: 1.15rem 0 0;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: var(--text-muted) !important;
+
+  strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+}
+
+.timeline-education-detail {
+  margin: 0.5rem 0 0;
+  font-weight: 600;
+  color: var(--text-muted) !important;
+}
+
 .vertical-timeline span {
-    color: white;
-    font-family: 'Courier Prime', monospace;
+  color: var(--text-muted);
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
-.vertical-timeline p {
-    color: rgb(39, 40, 34);
+.vertical-timeline-element-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  color: var(--text) !important;
 }
 
-.vertical-timeline-element p {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element h3 {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element h4 {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element span {
-    color: rgb(39, 40, 34);
+.vertical-timeline-element-subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted) !important;
 }
 
 .vertical-timeline-element .vertical-timeline-element-date {
-    color: white;
+  color: var(--text-muted);
+  opacity: 0.95;
+}
+
+.vertical-timeline::before {
+  background: var(--timeline-line) !important;
+  width: 3px;
+}
+
+.vertical-timeline-element-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .svg-inline--fa {
-    color: white;
+  color: inherit;
 }
 
 @media screen and (max-width: 1170px) {
-    .vertical-timeline-element .vertical-timeline-element-date {
-        color: rgb(39, 40, 34);
-    }
+  .vertical-timeline-element .vertical-timeline-element-date {
+    color: var(--text-muted);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-section__header {
+    margin-bottom: 1.75rem;
+  }
+
+  .timeline-entry .vertical-timeline-element-content {
+    padding: 1.1rem 1.15rem !important;
+  }
+
+  .timeline-metrics {
+    margin-top: 0.65rem;
+  }
 }
